@@ -5,28 +5,30 @@ function Yourscore(props){
         return <p>😝You Pass the test!!!😝</p>;
     }
     else if(props.s >= 0 && props.s < 60 ){
-        return <p>😤You need towork hard!!!😤</p>;
+        return <p>😤You need to work hard!!!😤</p>;
     }
     else{
         return <p>😓Re-enter😓</p>;
     }
-    // return <p>輸入你的成績</p>;
 }
 function Yourgrade(props){
-    if(props.s >= 90 && props.s <= 100 ){
+    if(props.sc >= 90 && props.sc <= 100 ){
         return <p>You get A !!!</p>;
     }
-    else if(props.s >= 80 && props.s < 90 ){
+    else if(props.sc >= 80 && props.sc < 90 ){
         return <p>You get B !!!</p>;
     }
-    else if(props.s >= 70 && props.s < 80 ){
+    else if(props.sc >= 70 && props.sc < 80 ){
         return <p>You get C !!!</p>;
     }
-    else if(props.s >= 60 && props.s < 70 ){
+    else if(props.sc >= 60 && props.sc < 70 ){
         return <p>You get D !!!</p>;
     }
-    else{
+    else if(props.sc >= 0 && props.sc < 60 ){
         return <p>You get F !!!</p>;
+    }
+    else{
+        return <p>You enter error value</p>;
     }
 }
 class Calculator extends React.Component {
@@ -52,7 +54,7 @@ class Calculator extends React.Component {
                 <Yourscore 
                     s={parseFloat(score)}/>
                 <Yourgrade 
-                    s={parseFloat(score)}/>
+                    sc={parseFloat(score)}/>
             </fieldset>
         );
     }
